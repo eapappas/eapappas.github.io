@@ -9,24 +9,61 @@
           <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
           <script src="noUiSlider.7.0.10/jquery.nouislider.all.min.js"></script>
           
-          <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 22pt; padding-left: 20px;">
-          Growth of Syrian Refugee Population Density in Surrounding States
+          <div id="menu">
+            <ul>
+                <li><a href="http://www.eapappas.github.io/syria/syria.html">Syrian Refugees</a></li>
+                <li><a href="http://www.eapappas.github.io/uganda/uganda.html">Uganda Emergency Response</a></li>
+                <li><a href="http://www.eapappas.github.io/other/other.html">Random Other Things</a></li>
+            </ul>
+          </div> 
+         
+          <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 26pt; padding-left: 20px;">
+          A Site for Research on Important Things Around the World and Random Other Things I've Done
           </p>
           
           <style>
-                html, body {
-                    height: 90%;
-                    width: 83%;
-                    margin: 0;
-                    padding: 0;
-                }
-
-                #map {
+              html, body {
                     height: 100%;
                     width: 100%;
-                }
-
-               .button {
+                    margin: 0;
+                    padding: 0;
+              }
+               #menu {
+                  font-family: calibri;
+                  font-size: 20pt;
+                  font-weight: bold;
+                  text-align: right;
+                  margin: 5px;
+                  margin-right: 35px;
+              }
+              #menu ul {
+                  height:auto;
+                  padding:8px 0px;
+                  margin:0px;
+                  content-align: center;
+              }
+              #menu li {
+                  display:inline;
+                  padding:20px;
+              }
+              #menu a {
+                  text-decoration: none;
+                  color: #A1DAB4;
+                  padding:8px 8px 8px 8px;
+              }
+              #menu a:hover {
+                  color: #FFFFeF;
+              }
+              #map {
+                    height: 500px;
+                    width: 50%;
+              }
+              .textbox {
+                    font-family: calibri
+                    color: #1F78B4;
+                    font-size: 16pt;
+              } 
+              .button {
                     display: none;
                     background: #253494;
                     color: #FFFFCC;
@@ -39,153 +76,18 @@
                     width: 150px;
                     height: 30px;
                 }
-/*just need to style the one button, because it inherits the properties of the .button above.*/
                 #may2012 {
                     display: block
                 }
-          </style>
+         </style>
+        
+         <script?
 
-          <script>
-                $(document).ready(function () {
-
-                $('.slider').noUiSlider({
-                start: 1,
-                connect: "lower",
-                orientation: "horizontal",
-                behaviour: 'snap',
-                range: {
-                    'min': 1,
-                    'max': 7,
-                    },
-                format: wNumb({
-                    decimals: 0
-                    })
-                });
-                    
-                $('.slider').on('slide', setValue);
-
-                var dataLayer;
-
-                   cartodb.createVis('map', 'https://pappe.cartodb.com/api/v2/viz/198b6648-eec8-11e4-9e4c-0e0c41326911/viz.json', {
-                        cartodb_logo: false,
-                        search: false,
-                        shareable: false,
-                        center_lat: 35.3890000,
-                        center_lon: 40.0781111,
-                        zoom: 6
-                   })               
-                   .done(function (vis, layers) {
-
-                        dataLayer = layers[1].getSubLayer(0);               
-
-                        $('#may2012').click(function () {
-                             dataLayer.setSQL("SELECT *, _201205 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                        });
-
-                        $('#nov2012').click(function () {
-                             dataLayer.setSQL("SELECT *, _201211 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                        });
-
-                        $('#may2013').click(function () {
-                             dataLayer.setSQL("SELECT *, _201305 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                        });
-
-                        $('#nov2013').click(function () {
-                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                        });
-
-                        $('#may2014').click(function () {
-                             dataLayer.setSQL("SELECT *, _201405 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                        });
-
-                        $('#nov2014').click(function () {
-                             dataLayer.setSQL("SELECT *, _201411 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                        });
-
-                        $('#mar2015').click(function () {
-                             dataLayer.setSQL("SELECT *, _201503 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                        });
-
-                    });
-
-                    function setValue(){
-                        var val=$('.slider').val()
-                        console.log(val)
-                        
-                        if (val==1){
-                             dataLayer.setSQL("SELECT *, _201205 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                             $('.button').hide();
-                             $('#may2012').show();
-                        };
-                        if (val==2){
-                             dataLayer.setSQL("SELECT *, _201211 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                             $('.button').hide();
-                             $('#nov2012').show();
-                        };
-                        if (val==3){
-                             dataLayer.setSQL("SELECT *, _201305 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                             $('.button').hide();
-                             $('#may2013').show();
-                        };
-                        if (val==4){
-                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                             $('.button').hide();
-                             $('#nov2013').show();
-                        };
-                        if (val==5){
-                             dataLayer.setSQL("SELECT *, _201311 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                             $('.button').hide();
-                             $('#may2014').show();
-                        };
-                        if (val==6){
-                             dataLayer.setSQL("SELECT *, _201405 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                             $('.button').hide();
-                             $('#may2014').show();
-                        };
-                        if (val==7){
-                             dataLayer.setSQL("SELECT *, _201411 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                             $('.button').hide();
-                             $('#nov2014').show();
-                        };
-                        if (val==8){
-                             dataLayer.setSQL("SELECT *, _201503 as data FROM test3_syria_refugee_pop_extrap_withgeom");
-                             $('.button').hide();
-                             $('#mar2015').show();
-                        };
-                    };
-                });
-
-          </script>
+         </script>
      </head> 
 
      <body> 
 
-    <div id="map"></div>
-    <div id="popSlider">
-        <div class="slider"></div>
-    </div>  
-    <div id="may2012" class="button">
-      May 2012
-    </div>
-    <div id="nov2012" class="button">
-      November 2012
-    </div>
-    <div id="may2013" class="button">
-      May 2013
-    </div>
-    <div id="nov2013" class="button">
-      November 2013
-    </div>
-    <div id="may2014" class="button">
-      May 2014
-    </div>
-    <div id="nov2014" class="button">
-      November 2014
-    </div>
-    <div id="mar2015" class="button">
-      March 2015
-    </div>
-
-     </body>
+    </body>
 
 </html>
