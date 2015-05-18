@@ -17,7 +17,7 @@
             </ul>
           </div> 
          
-          <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 26pt; padding-left: 20px;">
+          <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 26pt; padding-left: 30px;">
           An Eclectic Collection of Research on Things Around the World
           </p>
 <br />
@@ -59,6 +59,22 @@
                     height: 500px;
                     width: 50%;
               }
+              #placeholder {
+                    float: left;
+                    width: 80%;
+              }
+              #photo {
+                    display: block;
+                    right:  10px;
+                    float: right;
+                    padding: 10px; 
+                    margin-right: 100px;
+                    <!--overflow: hidden;-->
+              }
+              .resize {
+                    width: 200px;
+                    height: auto;
+              }
               .textbox {
                     font-family: calibri;
                     color: #1F78B4;
@@ -67,26 +83,14 @@
                     text-align: right;
               } 
               #aboutme {
-                    display: block;
+                    <!--display: block;-->
                     right:  10px;
                     width:  10%;
-                    float: right;
-                    padding: 10px; 
+                    padding: 10px;
                     margin-right: 100px;
-                        
-                }
-              #photo {
-                    display: block;
-                    right:  10px;
-                    width:  10%;
-                    heigh: 10%;
                     float: right;
-                    float: top
-                    padding: 10px; 
-                    margin-right: 100px;
-                    resize: 50%
-              }
-              
+                    clear: right;      
+               }
               .button {
                     display: none;
                     background: #253494;
@@ -101,16 +105,18 @@
                 }
          </style>
         
-         <script?
-
+         <script>
          </script>
+         
      </head> 
 
     <body> 
-    <div id="aboutme" class="textbox">
-    A recovering operations consultant in the field of human services softare, I received my Masters in International Affairs from the New School in New York, and have lived in Sweden, Burundi, and Uganda.  I am slowly learning to build this website and my views on things are ever evolving.  I of course want peace but will settle for understanding, and am always in search of hope.<br />  Thanks for visiting.
-    </div>
-    <div id="photo" style="width:50%; height:50%"><img src="http://eapappas.github.io/me_uganda_cropped.png" /></div>
+        <div id="placeholder"></div>
+        <div id="photo" style="width:50%; height:50%"><img class="resize" src="http://eapappas.github.io/me_uganda_cropped.png" /></div>
+        <div style="clear:right;"></div>
+        <div id="aboutme" class="textbox">
+        A recovering operations consultant in the field of human services softare, I received my Masters in International Affairs from the New School in New York, and have lived in Sweden, Burundi, and Uganda.  I am slowly learning to build this website and my views on things are ever evolving.  I of course want peace but will settle for understanding, and am always in search of hope.<br />  Thanks for visiting.
+        </div>
     </body>
 
 </html>
