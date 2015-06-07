@@ -7,19 +7,7 @@
          
           <script src="http://libs.cartocdn.com/cartodb.js/v3/3.13/cartodb.js"></script>
           <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-          <script src="noUiSlider.7.0.10/jquery.nouislider.all.min.js"></script>
-          
-          <div id="menu">
-            <ul>
-                <li><a href="http://eapappas.github.io/syria/index.html">syrian refugee crisis</a></li>
-                <li><a href="http://eapappas.github.io/uganda/index.html">uganda emergency response</a></li>
-                <li><a href="http://eapappas.github.io/other/index.html">other things</a></li>
-            </ul>
-          </div> 
-         
-          <p style="color:#1F78B4; font-family:calibri; font-weight: bold; font-size: 32pt; padding-left: 30px;">
-          research and other stuff
-          </p>
+          <script src="noUiSlider.7.0.10/jquery.nouislider.all.min.js"></script>       
 <br />
 <br />
           <style>
@@ -29,7 +17,14 @@
                     margin: 0;
                     padding: 0;
               }
-               #menu {
+              #title {
+                color:#1F78B4; 
+                font-family:calibri; 
+                font-weight: bold; 
+                font-size: 32pt; 
+                padding-left: 30px;
+              }
+              #menu {
                   font-family: calibri;
                   font-size: 20pt;
                   font-weight: bold;
@@ -111,6 +106,14 @@
      </head> 
 
     <body> 
+        <div id="menu">
+            <ul>
+                <li><a href="http://eapappas.github.io/syria/index.html">syrian refugee crisis</a></li>
+                <li><a href="http://eapappas.github.io/uganda/index.html">uganda emergency response</a></li>
+                <li><a href="http://eapappas.github.io/other/index.html">other things</a></li>
+            </ul>
+          </div> 
+        <div id="title">research and other stuff</div>
         <div id="placeholder"></div>
         <div id="photo"><img class="resize" src="http://eapappas.github.io/me_uganda_cropped.png" /></div>
         <div style="clear:right;"></div>
